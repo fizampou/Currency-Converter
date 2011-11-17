@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    Version="2.4">
+    <servlet>
+        <servlet-name>currencyconverter</servlet-name>
+        <servlet-class>com.example.web.currencyconverter</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CodeGrab</servlet-name>
+        <servlet-class>com.example.web.CodeGrabber</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Redirect</servlet-name>
+        <servlet-class>com.example.web.Redirect</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Listener</servlet-name>
+        <servlet-class>com.example.web.listener</servlet-class>
+    </servlet>
+  
+
+    <servlet-mapping>
+        <servlet-name>currencyconverter</servlet-name>
+        <url-pattern>/CurrencyConverter.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CodeGrab</servlet-name>
+        <url-pattern>/CodeGrabber.zip</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Redirect</servlet-name>
+        <url-pattern>/Redirect.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Listener</servlet-name>
+        <url-pattern>/ReportGrabber.do</url-pattern>
+    </servlet-mapping>
+    
+    <context-param>
+        <param-name>report</param-name>
+        <param-value>report.html</param-value>
+    </context-param> 
+
+    <listener>
+        <listener-class>com.example.model.MyServletContextListener</listener-class>
+    </listener> 
+
+</web-app>
